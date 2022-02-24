@@ -1,7 +1,21 @@
+function primo(numero) {
+  if (numero <= 1) {
+    return false;
+  }
+  for (let i = 2; i < numero; i++) {
+    if (numero % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
 function snapCrackle(maxValue) {
   let palavra = "";
   for (let i = 1; i <= maxValue; i++) {
-    if (i % 2 !== 0 && i % 5 == 0) {
+    if (primo(i)) {
+      palavra += "Prime";
+    } else if (i % 2 !== 0 && i % 5 == 0) {
       palavra += "SnapCrackle";
     } else if (i % 2 !== 0) {
       palavra += "Snap";
