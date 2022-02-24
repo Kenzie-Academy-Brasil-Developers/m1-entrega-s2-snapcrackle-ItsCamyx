@@ -1,12 +1,13 @@
 function snapCrackle(maxValue) {
   let palavra = "";
-  for (let i = 0; i <= maxValue; i++) {
-    if (i % 2 !== 0) {
+  for (let i = 1; i <= maxValue; i++) {
+    if (i % 2 !== 0 && i % 5 == 0) {
+      palavra += "SnapCrackle";
+    } else if (i % 2 !== 0) {
       palavra += "Snap";
     } else if (i % 5 == 0) {
       palavra += "Crackle";
-    } else if (i % 2 !== 0 && i % 5 == 0) {
-      palavra += "SnapCrackle";
+      //palavra = palavra + "Crackle"
     } else {
       palavra += i;
     }
